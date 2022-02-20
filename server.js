@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 7000;
+const PORT = 7000;
 const dbConnection = require('./db')
 app.use(express.json())
 
@@ -25,5 +25,5 @@ if(process.env.NODE_ENV==='production')
 }
 
 app.get('/', (req, res) => res.send('welcome to api'));
-app.listen(port, () => console.log(`node js running on port ${port}`));
+app.listen(process.env.PORT || 5000, () => console.log(`node js running on PORT ${PORT}`));
 
